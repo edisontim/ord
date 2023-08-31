@@ -96,32 +96,32 @@ macro_rules! tprintln {
     };
 }
 
-mod arguments;
-mod blocktime;
-mod chain;
-mod config;
-mod decimal;
-mod degree;
-mod deserialize_from_str;
-mod epoch;
-mod fee_rate;
-mod height;
-mod index;
-mod inscription;
+pub mod arguments;
+pub mod blocktime;
+pub mod chain;
+pub mod config;
+pub mod decimal;
+pub mod degree;
+pub mod deserialize_from_str;
+pub mod epoch;
+pub mod fee_rate;
+pub mod height;
+pub mod index;
+pub mod inscription;
 pub mod inscription_id;
-mod media;
-mod object;
-mod options;
-mod outgoing;
-mod page_config;
+pub mod media;
+pub mod object;
+pub mod options;
+pub mod outgoing;
+pub mod page_config;
 pub mod rarity;
-mod representation;
+pub mod representation;
 pub mod sat;
-mod sat_point;
+pub mod sat_point;
 pub mod subcommand;
-mod tally;
+pub mod tally;
 pub mod templates;
-mod wallet;
+pub mod wallet;
 
 type Result<T = (), E = Error> = std::result::Result<T, E>;
 
