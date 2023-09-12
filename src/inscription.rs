@@ -32,14 +32,14 @@ pub struct Inscription {
 
 #[derive(Debug, PartialEq, Clone)]
 pub struct TransactionInscription {
-  pub(crate) inscription: Inscription,
-  pub(crate) tx_in_index: u32,
-  pub(crate) tx_in_offset: u32,
+  pub inscription: Inscription,
+  pub tx_in_index: u32,
+  pub tx_in_offset: u32,
 }
 
 impl Inscription {
   #[cfg(test)]
-  pub(crate) fn new(content_type: Option<Vec<u8>>, body: Option<Vec<u8>>) -> Self {
+  pub fn new(content_type: Option<Vec<u8>>, body: Option<Vec<u8>>) -> Self {
     Self {
       content_type,
       body,
