@@ -19,6 +19,7 @@ pub(crate) enum Media {
 impl Media {
   const TABLE: &'static [(&'static str, Media, &'static [&'static str])] = &[
     ("application/json", Media::Text, &["json"]),
+    ("application/octet-stream", Media::Text, &[""]),
     ("application/pdf", Media::Pdf, &["pdf"]),
     ("application/pgp-signature", Media::Text, &["asc"]),
     ("application/yaml", Media::Text, &["yaml", "yml"]),
@@ -50,7 +51,7 @@ impl Media {
   pub(crate) fn content_type_for_path(path: &Path) -> Result<&'static str, Error> {
     let extension = path
       .extension()
-      .ok_or_else(|| anyhow!("file must have extension"))?
+      .unwrap_or_default()
       .to_str()
       .ok_or_else(|| anyhow!("unrecognized extension"))?;
 
